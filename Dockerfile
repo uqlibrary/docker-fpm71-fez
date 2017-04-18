@@ -26,7 +26,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
 COPY jhove /usr/local/jhove/
 RUN chmod +x /usr/local/jhove/jhove && sed -i 's/\#JHOVE_HOME=\[fill in path to jhove directory\]/JHOVE_HOME=\/usr\/local\/jhove\//' /usr/local/jhove/jhove
 
-COPY etc/php-fpm.d/www.conf /etc/opt/remi/php70/php-fpm.d/www.conf
+COPY etc/php-fpm.d/www.conf /etc/opt/remi/php71/php-fpm.d/www.conf
 
 RUN mkdir -p /espace/data && \
   mkdir -p /espace_san/incoming && \
