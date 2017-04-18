@@ -30,9 +30,9 @@ COPY etc/php-fpm.d/www.conf /etc/opt/remi/php70/php-fpm.d/www.conf
 
 RUN mkdir -p /espace/data && \
   mkdir -p /espace_san/incoming && \
-  sed -i "s/memory_limit = 128M/memory_limit = 800M/" /etc/php.ini && \
-  sed -i "s/post_max_size = 8M/post_max_size = 800M/" /etc/php.ini && \
-  sed -i "s/upload_max_filesize = 30M/upload_max_filesize = 800M/" /etc/php.ini && \
-  sed -i "s/max_execution_time = 30/max_execution_time = 300/" /etc/php.ini && \
-  sed -i "s/session.gc_maxlifetime = 1440/session.gc_maxlifetime = 2880/" /etc/php.ini && \
-  sed -i "s/; max_input_vars = 1000/max_input_vars = 5000/" /etc/php.ini
+  sed -i "s/memory_limit = 128M/memory_limit = 800M/" /etc/opt/remi/php71/php.ini && \
+  sed -i "s/post_max_size = 8M/post_max_size = 800M/" /etc/opt/remi/php71/php.ini && \
+  sed -i "s/upload_max_filesize = 30M/upload_max_filesize = 800M/" /etc/opt/remi/php71/php.ini && \
+  sed -i "s/max_execution_time = 30/max_execution_time = 300/" /etc/opt/remi/php71/php.ini && \
+  sed -i "s/session.gc_maxlifetime = 1440/session.gc_maxlifetime = 2880/" /etc/opt/remi/php71/php.ini && \
+  sed -i "s/; max_input_vars = 1000/max_input_vars = 5000/" /etc/opt/remi/php71/php.ini
