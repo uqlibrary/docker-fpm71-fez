@@ -19,7 +19,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y cairo-devel expat-devel freetype-devel gd-devel fontconfig-devel glib libpng zlib pango-devel pango && \
   cd /usr/local/src/graphviz-2.38.0 && ./configure && make && make install && \
   yum install -y java-1.8.0-openjdk-headless && \
-  mv /usr/local/src/jhove /usr/local/jhove && rm -f /usr/local/src/jhove.tar.gz && \
+  mv /usr/local/src/jhove-1.16.7 /usr/local/jhove && rm -f /usr/local/src/jhove.tar.gz && \
   yum group remove -y "Development Tools" && \
   yum autoremove -y && yum clean all
 
