@@ -8,7 +8,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y perl-Image-ExifTool --enablerepo=epel-testing && \
   yum install -y ffmpeg --enablerepo=nux-dextop && \
   yum install -y ImageMagick7 ImageMagick7 --enablerepo=remi --skip-broken && \
-  wget -O /usr/local/src/jhove.tar.gz https://github.com/openpreserve/jhove/archive/v1.16.7.tar.gz && \
+  wget -O /usr/local/src/jhove.tar.gz https://github.com/openpreserve/jhove/releases/download/v1.11/jhove-1_11.tar.gz && \
   wget -O /usr/local/src/yamdi.tar.gz http://downloads.sourceforge.net/project/yamdi/yamdi/1.9/yamdi-1.9.tar.gz && \
   wget -O /usr/local/src/graphviz.tar.gz http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.38.0.tar.gz && \
   cd /usr/local/src && tar xvzf yamdi.tar.gz && \
@@ -19,7 +19,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y cairo-devel expat-devel freetype-devel gd-devel fontconfig-devel glib libpng zlib pango-devel pango && \
   cd /usr/local/src/graphviz-2.38.0 && ./configure && make && make install && \
   yum install -y java-1.8.0-openjdk-headless && \
-  mv /usr/local/src/jhove-1.16.7 /usr/local/jhove && rm -f /usr/local/src/jhove.tar.gz && \
+  mv /usr/local/src/jhove /usr/local/jhove && rm -f /usr/local/src/jhove.tar.gz && \
   yum group remove -y "Development Tools" && \
   yum autoremove -y && yum clean all
 
