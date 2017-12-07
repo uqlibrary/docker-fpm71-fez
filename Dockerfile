@@ -1,4 +1,4 @@
-FROM uqlibrary/docker-fpm71:4
+FROM uqlibrary/docker-fpm71:5
 
 RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm && \
@@ -7,6 +7,7 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y poppler-utils && \
   yum install -y perl-Image-ExifTool --enablerepo=epel-testing && \
   yum install -y ffmpeg --enablerepo=nux-dextop && \
+  yum install -y php71-php-zip && \
   yum install -y ImageMagick7 ImageMagick7 --enablerepo=remi --skip-broken && \
   wget -O /usr/local/src/jhove.tar.gz https://github.com/openpreserve/jhove/releases/download/v1.11/jhove-1_11.tar.gz && \
   wget -O /usr/local/src/yamdi.tar.gz http://downloads.sourceforge.net/project/yamdi/yamdi/1.9/yamdi-1.9.tar.gz && \
