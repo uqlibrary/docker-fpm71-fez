@@ -1,4 +1,4 @@
-FROM uqlibrary/docker-fpm71:6
+FROM uqlibrary/docker-fpm71:8
 
 RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm && \
@@ -10,15 +10,15 @@ RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y php71-php-zip && \
   yum install -y ImageMagick7 ImageMagick7 --enablerepo=remi --skip-broken && \
   wget -O /usr/local/src/jhove.tar.gz https://github.com/openpreserve/jhove/releases/download/v1.11/jhove-1_11.tar.gz && \
-  wget -O /usr/local/src/yamdi.tar.gz http://downloads.sourceforge.net/project/yamdi/yamdi/1.9/yamdi-1.9.tar.gz && \
-  wget -O /usr/local/src/graphviz.tar.gz http://204.178.9.49/pub/graphviz/stable/SOURCES/graphviz-2.38.0.tar.gz && \
+  wget -O /usr/local/src/yamdi.tar.gz http://mirror.ffmpeginstaller.com/source/yamdi/yamdi-1.9.tar.gz && \
+  wget -O /usr/local/src/graphviz.tar.gz http://pkgs.fedoraproject.org/repo/pkgs/graphviz/graphviz-2.38.0.tar.gz/5b6a829b2ac94efcd5fa3c223ed6d3ae/graphviz-2.38.0.tar.gz && \
   cd /usr/local/src && tar xvzf yamdi.tar.gz && \
   cd /usr/local/src && tar xvzf jhove.tar.gz && \
   cd /usr/local/src && tar xvzf graphviz.tar.gz && \
   yum group install -y "Development Tools" && \
   cd /usr/local/src/yamdi-1.9 && gcc yamdi.c -o yamdi -O2 -Wall && mv yamdi /usr/bin/yamdi && chmod +x /usr/bin/yamdi && cd .. && rm -rf yamdi-1.9 && rm -f yamdi.tar.gz && \
   yum install -y cairo-devel expat-devel freetype-devel gd-devel fontconfig-devel glib libpng zlib pango-devel pango && \
-  cd /usr/local/src/graphviz-2.38.0 && ./configure && make && make install && \
+  cd /usr/local/src/graphviz-2.38.0 && ./configure && make && make install && rm -rf /usr/local/src/graphviz-2.38.0 && rm -f /usr/local/src/graphviz.tar.gz && \
   yum install -y java-1.8.0-openjdk-headless && \
   mv /usr/local/src/jhove /usr/local/jhove && rm -f /usr/local/src/jhove.tar.gz && \
   yum group remove -y "Development Tools" && \
