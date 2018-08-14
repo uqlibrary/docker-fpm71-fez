@@ -35,5 +35,5 @@ RUN mkdir -p /espace/data && \
   sed -i "s/post_max_size = 8M/post_max_size = 800M/" /etc/opt/remi/php71/php.ini && \
   sed -i "s/upload_max_filesize = 30M/upload_max_filesize = 800M/" /etc/opt/remi/php71/php.ini && \
   sed -i "s/max_execution_time = 30/max_execution_time = 300/" /etc/opt/remi/php71/php.ini && \
-  sed -i "s/session.gc_maxlifetime = 1440/session.gc_maxlifetime = 10800/" /etc/opt/remi/php71/php.ini && \
+  sed -i "s/session.gc_maxlifetime = 1440/session.gc_maxlifetime = 43200/" /etc/opt/remi/php71/php.ini && \
   sed -i "s/; max_input_vars = 1000/max_input_vars = 25000/" /etc/opt/remi/php71/php.ini
