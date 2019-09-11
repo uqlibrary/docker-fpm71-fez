@@ -1,6 +1,7 @@
 FROM uqlibrary/docker-fpm71:11
 
-RUN rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
+RUN yum update -y && \
+  rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
   yum install -y http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm && \
   yum install -y file && \
   yum install -y mysql && \
