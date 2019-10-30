@@ -1,4 +1,4 @@
-FROM uqlibrary/docker-fpm71:11
+FROM uqlibrary/docker-fpm71:201910
 
 RUN yum update -y && \
   rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro && \
